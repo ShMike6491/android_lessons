@@ -107,7 +107,6 @@ class CalculatorServiceImp implements CalculatorService, Parcelable{
         screenSaver = Double.parseDouble(num);
     }
 
-
     @Override
     public int describeContents() {
         return 0;
