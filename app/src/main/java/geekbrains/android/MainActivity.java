@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private final static String KEY_CALCULATOR = "key_calculator";
 
-    private Calculator calculator;
+    private CalculatorServiceImp calculator;
 
     private boolean newLine;
 
@@ -23,104 +23,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        calculator = new Calculator();
+        calculator = new CalculatorServiceImp();
         initView();
     }
 
     private void initView() {
         display = findViewById(R.id.tv_display);
 
-        initBtn0();
-        initBtn1();
-        initBtn2();
-        initBtn3();
-        initBtn4();
-        initBtn5();
-        initBtn6();
-        initBtn7();
-        initBtn8();
-        initBtn9();
-        initBtnCancel();
-        initBtnDiv();
-        initBtnEquals();
-        initBtnMinus();
-        initBtnSum();
-        initBtnRemove();
-        initBtnDot();
-        initBtnMulti();
+        initButtons();
     }
 
-    private void initBtn0() {
-        Button btn1 = findViewById(R.id.btn_0);
-        btn1.setOnClickListener(this);
-    }
-    private void initBtn1() {
-        Button btn1 = findViewById(R.id.btn_1);
-        btn1.setOnClickListener(this);
-    }
-    private void initBtn2() {
-        Button btn2 = findViewById(R.id.btn_2);
-        btn2.setOnClickListener(this);
-    }
-    private void initBtn3() {
-        Button btn3 = findViewById(R.id.btn_3);
-        btn3.setOnClickListener(this);
-    }
-    private void initBtn4() {
-        Button btn4 = findViewById(R.id.btn_4);
-        btn4.setOnClickListener(this);
-    }
-    private void initBtn5() {
-        Button btn5 = findViewById(R.id.btn_5);
-        btn5.setOnClickListener(this);
-    }
-    private void initBtn6() {
-        Button btn6 = findViewById(R.id.btn_6);
-        btn6.setOnClickListener(this);
-    }
-    private void initBtn7() {
-        Button btn7 = findViewById(R.id.btn_7);
-        btn7.setOnClickListener(this);
-    }
-    private void initBtn8() {
-        Button btn8 = findViewById(R.id.btn_8);
-        btn8.setOnClickListener(this);
-    }
-    private void initBtn9() {
-        Button btn9 = findViewById(R.id.btn_9);
-        btn9.setOnClickListener(this);
-    }
-    private void initBtnDot() {
-        Button btnDot = findViewById(R.id.btn_dot);
-        btnDot.setOnClickListener(this);
-    }
-    private void initBtnCancel() {
-        Button btnCancel = findViewById(R.id.btn_clear);
-        btnCancel.setOnClickListener(this);
-    }
-    private void initBtnRemove() {
-        Button btnRemove = findViewById(R.id.btn_remove);
-        btnRemove.setOnClickListener(this);
-    }
-    private void initBtnEquals() {
-        Button btnEquals = findViewById(R.id.btn_equals);
-        btnEquals.setOnClickListener(this);
-    }
-    private void initBtnSum() {
-        Button btnSum = findViewById(R.id.btn_plus);
-        btnSum.setOnClickListener(this);
-    }
-    private void initBtnMinus() {
-        Button btnMinus = findViewById(R.id.btn_minus);
-        btnMinus.setOnClickListener(this);
-    }
-    private void initBtnMulti() {
-        Button btnMulti = findViewById(R.id.btn_multi);
-        btnMulti.setOnClickListener(this);
-    }
-    private void initBtnDiv() {
-        Button btnDiv = findViewById(R.id.btn_div);
-        btnDiv.setOnClickListener(this);
+    private void initButtons() {
+        int[] buttonIds = {R.id.btn_0, R.id.btn_1, R.id.btn_2, R.id.btn_3,
+                R.id.btn_4, R.id.btn_5, R.id.btn_6, R.id.btn_7, R.id.btn_8, R.id.btn_9,
+                R.id.btn_dot, R.id.btn_clear, R.id.btn_remove, R.id.btn_equals, R.id.btn_plus,
+                R.id.btn_minus, R.id.btn_multi, R.id.btn_div};
+        for (int buttonId : buttonIds) {
+            Button btn = findViewById(buttonId);
+            btn.setOnClickListener(this);
+        }
     }
 
     @Override

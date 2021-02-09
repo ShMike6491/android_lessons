@@ -3,7 +3,7 @@ package geekbrains.android;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class Calculator implements Parcelable{
+class CalculatorServiceImp implements CalculatorService, Parcelable{
     private double x;
     private double y;
     private double result;
@@ -12,11 +12,11 @@ class Calculator implements Parcelable{
 
     private double screenSaver;
 
-    Calculator () {
+    CalculatorServiceImp() {
         reset();
     }
 
-    protected Calculator(Parcel in) {
+    protected CalculatorServiceImp(Parcel in) {
         x = in.readDouble();
         y = in.readDouble();
         result = in.readDouble();
@@ -25,19 +25,20 @@ class Calculator implements Parcelable{
         screenSaver = in.readDouble();
     }
 
-    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+    public static final Creator<CalculatorServiceImp> CREATOR = new Creator<CalculatorServiceImp>() {
         @Override
-        public Calculator createFromParcel(Parcel in) {
-            return new Calculator(in);
+        public CalculatorServiceImp createFromParcel(Parcel in) {
+            return new CalculatorServiceImp(in);
         }
 
         @Override
-        public Calculator[] newArray(int size) {
-            return new Calculator[size];
+        public CalculatorServiceImp[] newArray(int size) {
+            return new CalculatorServiceImp[size];
         }
     };
 
-    double operate(String number, char operator) {
+    @Override
+    public double operate(String number, char operator) {
         double num = Double.parseDouble(number);
 
         if (operator == '=') {
@@ -93,19 +94,18 @@ class Calculator implements Parcelable{
         isOperatorClicked = false;
     }
 
-    boolean errorPrevent (String num) {
+    public boolean errorPrevent (String num) {
         double number = Double.parseDouble(num);
         return operator == '/' && number == 0;
     }
 
-    double getScreenSaver() {
+    public double getScreenSaver() {
         return screenSaver;
     }
 
-    void setScreenSaver (String num) {
+    public void setScreenSaver (String num) {
         screenSaver = Double.parseDouble(num);
     }
-
 
     @Override
     public int describeContents() {
