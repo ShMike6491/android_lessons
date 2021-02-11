@@ -7,6 +7,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="PinkTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#e91e63</item>
+        <item name="colorPrimaryDark">#b0003a</item>
+        <item name="colorAccent">#F686A8</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#FF262429</item>
+        <item name="colorPrimaryDark">#FF151517</item>
+        <item name="colorAccent">#FF91A1A0</item>
+    </style>
+
+    <style name="LightTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#CFCAD8</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
+        <item name="colorAccent">#232525</item>
+    </style>
+
+    <style name="GreenTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#578E57</item>
+        <item name="colorPrimaryDark">#178819</item>
+        <item name="colorAccent">#F8F8F8</item>
+    </style>
+
     <style name="BtnAction">
         <item name="android:backgroundTint">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/colorAccent</item>

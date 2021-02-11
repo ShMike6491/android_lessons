@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".SettingActivity"
+    android:orientation="vertical">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/radioButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCancel"
+        android:paddingLeft="@dimen/button_landscape"
+        >
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/light_theme" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dark_theme" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_green"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/green_theme" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/rb_pink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pink_theme" />
+
+    </RadioGroup>
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+</LinearLayout>
