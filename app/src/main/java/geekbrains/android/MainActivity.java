@@ -4,14 +4,20 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private final static String KEY_CALCULATOR = "key_calculator";
+
+    private final static String TEXT = "PARAM";
 
     private CalculatorServiceImp calculator;
 
@@ -23,8 +29,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         calculator = new CalculatorServiceImp();
+
         initView();
+
+        intentHandle();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Intent intent = new Intent(this, SettingActivity.class);
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void intentHandle() {
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if(bundle == null) return;
+
+        String txt =  bundle.getString(TEXT);
+        Toast.makeText(getApplicationContext(), txt, Toast.LENGTH_SHORT).show();
     }
 
     private void initView() {
@@ -111,7 +144,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     private void displayRemove() {
         String text = display.getText().toString();
-        if (text.length() == 1) {
+        if (text.length() == 1 || text.equals("Error")) {
             displayClear();
         } else {
             display.setText(text.substring(0, text.length() - 1));
