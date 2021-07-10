@@ -11,5 +11,5 @@ This project is a beginner introduction app to the Android framework. Here I mad
 
 <img align="left" src="https://developer.android.com/guide/components/images/activity_lifecycle.png" alt="alt text" width="300" height="400">
 
-
+--------------------------
 
