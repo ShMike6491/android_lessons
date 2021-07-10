@@ -7,7 +7,7 @@ Calculator is a simple application, built without using any architecture or patt
 
 --------------------------
 
-<img align="left" src="https://drive.google.com/uc?export=view&id=1_5HDBougWTIOmNSZo_DJ5dqZFcr7I5Xf" alt="alt text" width="250" height="400">
+<img align="left" src="https://drive.google.com/uc?export=view&id=1_5HDBougWTIOmNSZo_DJ5dqZFcr7I5Xf" alt="alt text" width="200" height="400">
 
 <img align="left" src="https://developer.android.com/guide/platform/images/android-stack_2x.png" alt="alt text" width="350" height="400">
 
