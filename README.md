@@ -1,4 +1,4 @@
-###Calculator App Project
+Calculator App Project
 ==========================
 
 ![alt text](https://drive.google.com/file/d/1_5HDBougWTIOmNSZo_DJ5dqZFcr7I5Xf/view?usp=sharing)  
