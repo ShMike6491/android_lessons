@@ -9,7 +9,7 @@ This project is a beginner introduction app to the Android framework. Here I mad
 
 <img align="left" src="https://developer.android.com/guide/platform/images/android-stack_2x.png" alt="alt text" width="300" height="400">
 
-<img align="left" src="https://developer.android.com/guide/components/images/activity_lifecycle.png" alt="alt text" width="250" height="400">
+<img align="left" src="https://developer.android.com/guide/components/images/activity_lifecycle.png" alt="alt text" width="300" height="400">
 
 
 
